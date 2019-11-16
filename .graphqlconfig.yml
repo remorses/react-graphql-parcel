@@ -1,12 +1,14 @@
-
-projects:
-  dev:
-    schemaPath: schema.graphql
-    includes: ["*.graphql"]
-    extensions:
-      endpoints:
-        default: https://countries.trevorblades.com/ # 'http://localhost:8090/graphql' # START THE BACKEND SERVER FIRST!!!
-        # mock: 'http://localhost:9000/'
-
-  
-
+overwrite: true
+schema: https://countries.trevorblades.com/
+schemaPath: schema.graphql
+documents: ./src/*.graphql
+generates:
+    ./schema.graphql:
+        - schema-ast
+    src/generated.tsx:
+        plugins:
+        - 'typescript'
+        - 'typescript-operations'
+        - 'typescript-react-apollo'
+        config:
+            withHooks: true

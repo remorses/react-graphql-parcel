@@ -8,5 +8,5 @@ mock:
 start-mock-server:
 	graphql-easy-mocks --port 9000 -f schema.graphql -m src/graphqlMocks.js
 
-generate:
-	graphql get-schema && graphql-codegen
+gen:
+	npx graphql-codegen --config ./.graphqlconfig.yml

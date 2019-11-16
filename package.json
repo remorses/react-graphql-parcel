@@ -20,6 +20,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "latest",
     "@graphql-codegen/core": "latest",
+    "@graphql-codegen/schema-ast": "^1.8.3",
     "@graphql-codegen/typescript": "latest",
     "@graphql-codegen/typescript-operations": "latest",
     "@graphql-codegen/typescript-react-apollo": "latest",
@@ -27,7 +28,9 @@
     "graphql-easy-mocks": "latest",
     "typescript": "^3.7.2"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "parcel build public/index.html"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
